@@ -1,0 +1,80 @@
+.sidebar {
+    background: #7200ff;
+    width: 92px;
+    height: 94vh;
+    border-radius: 20px;
+    position: fixed;
+    z-index: 999;
+    @media screen and (max-width: 1028px) {
+        display: none;
+        flex: 0;
+    }
+    .sidebar__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0;
+        .sidebar__img {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            img {
+                border: 2px solid rgb(56, 2, 56);
+                border-radius: 50%;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .online {
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: greenyellow;
+                bottom: 2px;
+                right: 0;
+            }
+        }
+        .sidebar__menu {
+            margin-top: 50px;
+            .sidebar__menu-wrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                .sidebar__icon {
+                    color: white;
+                    width: 80px;
+                    height: 45px;
+                    border-top-left-radius: 10px;
+                    border-bottom-left-radius: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 28px;
+                    cursor: pointer;
+                    transition: 0.5s all;
+                    margin: auto;
+                    border-right: 4px solid transparent;
+                }
+                .active {
+                    margin-left: 12px;
+                    border-right: 4px solid red;
+                    background: rgb(44, 1, 98, 0.5);
+                }
+            }
+        }
+        .sidebar__exit {
+            position: absolute;
+            bottom: 10px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+    }
+}
+
+.hidden {
+    left: -100%; /* or left: -100%; if you're using position: fixed/absolute */
+    overflow: hidden;
+}
